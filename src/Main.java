@@ -1,13 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+  public static void main(String[] args){
+
+    String nomeDoFilme = "Top Gun";
+    int notaDoFilme = 4;
+    int anoDeLancamento = 2022;
+    boolean inluidoNoPlano = false;
+
+
+    System.out.println("Este é o screenMatch");
+    System.out.println("Filme: " + nomeDoFilme + " Ano de lançamento: " + anoDeLancamento + " Nota do filme: " + notaDoFilme);
+    if (inluidoNoPlano) {
+      System.out.println("Esta incluido no seu plano");
+    } else {
+      System.out.println("Infelizmente nao esta incluido no seu plano");
     }
+
+    if (notaDoFilme >= 8) {
+      System.out.println("É um bom filme, com boas avaliaçoes");
+    } else if (notaDoFilme >=5) {
+      System.out.println("É um filme mediano, com avaliçoes medias");
+    } else {
+      System.out.println("O filme não tem boas avaliaçoes");
+    }
+
+
+
+
+
+
+
+
+
+
+  }
 }
