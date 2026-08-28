@@ -8,7 +8,7 @@ public class Main {
 
     char tipoDePlano;
     int valorPagoAtualEmDolar = 4;
-    double valorDoPlanoEmReal = (double) valorPagoAtualEmDolar * 5.15;
+    double valorDoPlanoEmReal = valorPagoAtualEmDolar * 5.15;
 
     if (valorDoPlanoEmReal >= 39.90) {
       tipoDePlano = 'A';
@@ -37,6 +37,7 @@ public class Main {
     while (filmeEscolhido != 6) {
 
       System.out.println("Este é o screenMatch");
+      System.out.println("-----------------------------------");
       System.out.println("Escolha um dos seguintes filmes: \n" +
           "1 - " + nomeDoFilme1 + "\n" +
           "2 - " + nomeDoFilme2 + "\n" +
@@ -140,19 +141,25 @@ public class Main {
       } else {
         System.out.println("Infelizmente nao esta incluido no seu plano");
       }
-      
-        System.out.println("Voltar ao menu?");
-        System.out.println("Fechar o sistema?");
+
+      System.out.println("-----------------------------------");
+      System.out.println("1 -Voltar ao menu?");
+      System.out.println("2 -Fechar o sistema?");
 
       int opcoesDepoisDoFilme = scanner.nextInt();
 
+      if(opcoesDepoisDoFilme == 1){
+        continue;
+      } else if(opcoesDepoisDoFilme == 2){
+        System.out.println("Volte Sempre!!");
+        break;
+      }else{
+        System.out.println("Opçao invalida");
+        }
 
 
     }
 
-    scanner.close();
+  scanner.close();
 
-    scanner.close();
-
-  }
-}
+}}
