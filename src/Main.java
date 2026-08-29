@@ -6,6 +6,13 @@ public class Main {
 
     Scanner scanner = new Scanner(System.in);
 
+    Filme topGun = new Filme();
+    Filme duna = new Filme();
+    Filme vingadores = new Filme();
+    Filme barbie = new Filme();
+    Filme oppenheimer = new Filme();
+    Filme filmeSelecionado = null;
+
     char tipoDePlano;
     int valorPagoAtualEmDolar = 4;
     double valorDoPlanoEmReal = valorPagoAtualEmDolar * 5.15;
@@ -18,86 +25,79 @@ public class Main {
       tipoDePlano = 'C';
     }
 
-    String nomeDoFilme1 = "Top Gun";
-    String nomeDoFilme2 = "Duna";
-    String nomeDoFilme3 = "Vingadores";
-    String nomeDoFilme4 = "Barbie";
-    String nomeDoFilme5 = "Oppenhaimer";
+    topGun.nome = "Top Gun";
+    topGun.descricao = "Ases Indomáveis, Pete Mitchell (Tom Cruise), um jovem piloto, ingressa na Academia Aérea para se tornar piloto de caça.";
+    topGun.anoDeLancamento = 2024;
+    topGun.nota1DoFilme = 9.2;
+    topGun.nota2DoFilme = 8.9;
+
+    duna.nome= "Duna";
+    duna.descricao = "Duna é uma famosa obra de ficção científica criada por Frank Herbert que se passa no inóspito planeta desértico Arrakis.";
+    duna.anoDeLancamento = 2021;
+    duna.nota1DoFilme = 9.0;
+    duna.nota2DoFilme = 8.0;
+
+    vingadores.nome = "Vingadores";
+    vingadores.descricao = "Os heróis mais poderosos da Terra precisam unir forças para impedir uma ameaça capaz de colocar todo o planeta em perigo.";
+    vingadores.anoDeLancamento = 2012;
+    vingadores.nota1DoFilme = 9.1;
+    vingadores.nota2DoFilme = 7.7;
+
+    barbie.nome = "Barbie";
+    barbie.descricao = "Barbie deixa o mundo perfeito da Barbielândia e parte para o mundo real em busca de respostas sobre sua existência.";
+    barbie.anoDeLancamento = 2023;
+    barbie.nota1DoFilme = 9.7;
+    barbie.nota2DoFilme = 5.8;
+
+    oppenheimer.nome = "Oppenheimer";
+    oppenheimer.descricao = "A história do físico J. Robert Oppenheimer e sua participação no desenvolvimento da primeira bomba atômica durante o Projeto Manhattan.";
+    oppenheimer.anoDeLancamento = 2023;
+    oppenheimer.nota1DoFilme = 8.5;
+    oppenheimer.nota2DoFilme = 7.4;
+
     String fecharSistema = "Sair do sistema";
 
-    String nomeDoFilme = "";
-    double nota1DoFilme = 0;
-    double nota2DoFilme = 0;
-    double notaGeralDoFilme = 0;
-    int estrelas = 0;
-    int anoDeLancamento = 0;
+    int opcao = 0;
 
-    int filmeEscolhido = 0;
-
-    while (filmeEscolhido != 6) {
+    while (opcao != 6) {
 
       System.out.println("Este é o screenMatch");
       System.out.println("-----------------------------------");
       System.out.println("Escolha um dos seguintes filmes: \n" +
-          "1 - " + nomeDoFilme1 + "\n" +
-          "2 - " + nomeDoFilme2 + "\n" +
-          "3 - " + nomeDoFilme3 + "\n" +
-          "4 - " + nomeDoFilme4 + "\n" +
-          "5 - " + nomeDoFilme5 + "\n" +
+          "1 - " + topGun.nome + "\n" +
+          "2 - " + duna.nome + "\n" +
+          "3 - " + vingadores.nome + "\n" +
+          "4 - " + barbie.nome+ "\n" +
+          "5 - " + oppenheimer.nome + "\n" +
           "6 - " + fecharSistema);
 
-      filmeEscolhido = scanner.nextInt();
+      opcao = scanner.nextInt();
 
-      if (filmeEscolhido == 6) {
+      if (opcao == 6) {
         System.out.println("Saindo.....");
         break;
       }
 
-      switch (filmeEscolhido) {
+      switch (opcao) {
 
         case 1:
-
-          nomeDoFilme = nomeDoFilme1;
-          nota1DoFilme = 9.4;
-          nota2DoFilme = 7.4;
-          anoDeLancamento = 2022;
-
+          filmeSelecionado = topGun;
           break;
 
         case 2:
-
-          nomeDoFilme = nomeDoFilme2;
-          nota1DoFilme = 10.0;
-          nota2DoFilme = 6.8;
-          anoDeLancamento = 2023;
-
+          filmeSelecionado = duna;
           break;
 
         case 3:
-
-          nomeDoFilme = nomeDoFilme3;
-          nota1DoFilme = 9.1;
-          nota2DoFilme = 7.7;
-          anoDeLancamento = 2026;
-
+          filmeSelecionado = vingadores;
           break;
 
         case 4:
-
-          nomeDoFilme = nomeDoFilme4;
-          nota1DoFilme = 9.7;
-          nota2DoFilme = 5.8;
-          anoDeLancamento = 2025;
-
+          filmeSelecionado = barbie;
           break;
 
         case 5:
-
-          nomeDoFilme = nomeDoFilme5;
-          nota1DoFilme = 8.5;
-          nota2DoFilme = 7.4;
-          anoDeLancamento = 2024;
-
+          filmeSelecionado = oppenheimer;
           break;
 
         default:
@@ -106,10 +106,11 @@ public class Main {
 
       }
 
+
       String estrelasGeradas = "";
 
-      notaGeralDoFilme = (nota2DoFilme + nota1DoFilme) / 2;
-      estrelas = (int) notaGeralDoFilme / 2;
+      double notaGeralDoFilme = (filmeSelecionado.nota1DoFilme + filmeSelecionado.nota2DoFilme) / 2;
+      int estrelas = (int) notaGeralDoFilme / 2;
 
       int estrelasVazias = 5 - estrelas;
       String estrelasApagadas = "";
@@ -122,8 +123,8 @@ public class Main {
       }
 
       System.out.println("\n-----------------------------------");
-      System.out.println("Filme: " + nomeDoFilme +
-          "\nAno de lançamento: " + anoDeLancamento + "\nNota do filme: " + notaGeralDoFilme + " É um filme: "
+      System.out.println("Filme: " + filmeSelecionado.nome+ "\nDescriçao do filme: " + filmeSelecionado.descricao +
+          "\nAno de lançamento: " + filmeSelecionado.anoDeLancamento + "\nNota do filme: " + notaGeralDoFilme + " É um filme: "
           + estrelasGeradas + estrelasApagadas + " Estrelas");
 
       if (notaGeralDoFilme >= 8) {
