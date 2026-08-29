@@ -6,6 +6,11 @@ public class Main {
 
     Scanner scanner = new Scanner(System.in);
 
+    Plano basic = new Plano();
+    Plano normal = new Plano();
+    Plano Premium = new Plano();
+    Plano tipoDePlano = null;
+
     Filme topGun = new Filme();
     Filme duna = new Filme();
     Filme vingadores = new Filme();
@@ -13,17 +18,12 @@ public class Main {
     Filme oppenheimer = new Filme();
     Filme filmeSelecionado = null;
 
-    char tipoDePlano;
-    int valorPagoAtualEmDolar = 4;
-    double valorDoPlanoEmReal = valorPagoAtualEmDolar * 5.15;
 
-    if (valorDoPlanoEmReal >= 39.90) {
-      tipoDePlano = 'A';
-    } else if (valorDoPlanoEmReal >= 29.90) {
-      tipoDePlano = 'B';
-    } else {
-      tipoDePlano = 'C';
-    }
+    System.out.println("Digite o nome do plano: ");
+    tipoDePlano = scanner.next();
+    tipoDePlano.verificaTipoDePlano();
+
+
 
     topGun.nome = "Top Gun";
     topGun.descricao = "Ases Indomáveis, Pete Mitchell (Tom Cruise), um jovem piloto, ingressa na Academia Aérea para se tornar piloto de caça.";
@@ -64,12 +64,12 @@ public class Main {
       System.out.println("Este é o screenMatch");
       System.out.println("-----------------------------------");
       System.out.println("Escolha um dos seguintes filmes: \n" +
-          "1 - " + topGun.nome + "\n" +
-          "2 - " + duna.nome + "\n" +
-          "3 - " + vingadores.nome + "\n" +
-          "4 - " + barbie.nome+ "\n" +
-          "5 - " + oppenheimer.nome + "\n" +
-          "6 - " + fecharSistema);
+              "1 - " + topGun.nome + "\n" +
+              "2 - " + duna.nome + "\n" +
+              "3 - " + vingadores.nome + "\n" +
+              "4 - " + barbie.nome+ "\n" +
+              "5 - " + oppenheimer.nome + "\n" +
+              "6 - " + fecharSistema);
 
       opcao = scanner.nextInt();
 
@@ -106,42 +106,10 @@ public class Main {
 
       }
 
-
-      String estrelasGeradas = "";
-
-      double notaGeralDoFilme = (filmeSelecionado.nota1DoFilme + filmeSelecionado.nota2DoFilme) / 2;
-      int estrelas = (int) notaGeralDoFilme / 2;
-
-      int estrelasVazias = 5 - estrelas;
-      String estrelasApagadas = "";
-
-      for (int i = 0; i < estrelas; i++) {
-        estrelasGeradas += "★";
-      }
-      for (int i = 0; i < estrelasVazias; i++) {
-        estrelasApagadas += "☆";
-      }
-
-      System.out.println("\n-----------------------------------");
-      System.out.println("Filme: " + filmeSelecionado.nome+ "\nDescriçao do filme: " + filmeSelecionado.descricao +
-          "\nAno de lançamento: " + filmeSelecionado.anoDeLancamento + "\nNota do filme: " + notaGeralDoFilme + " É um filme: "
-          + estrelasGeradas + estrelasApagadas + " Estrelas");
-
-      if (notaGeralDoFilme >= 8) {
-        System.out.println("É um bom filme, com boas avaliaçoes");
-      } else if (notaGeralDoFilme >= 5) {
-        System.out.println("É um filme mediano, com avaliçoes medias");
-      } else {
-        System.out.println("O filme não tem boas avaliaçoes");
-      }
+      filmeSelecionado.calcularNota();
+      filmeSelecionado.exibeFichaFilme();
 
       System.out.println("-----------------------------------");
-
-      if (tipoDePlano == 'A') {
-        System.out.println("Esta incluido no seu plano");
-      } else {
-        System.out.println("Infelizmente nao esta incluido no seu plano");
-      }
 
       System.out.println("-----------------------------------");
       System.out.println("1 -Voltar ao menu?");
@@ -156,11 +124,14 @@ public class Main {
         break;
       }else{
         System.out.println("Opçao invalida");
-        }
+      }
 
 
     }
 
-  scanner.close();
 
-}}
+
+      scanner.close();
+
+  }
+}
