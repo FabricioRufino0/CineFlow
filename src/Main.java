@@ -20,7 +20,7 @@ public class Main {
 
 
     System.out.println("Digite o nome do plano: ");
-    tipoDePlano = scanner.next();
+    tipoDePlano = scanner(tip9);
     tipoDePlano.verificaTipoDePlano();
 
 
