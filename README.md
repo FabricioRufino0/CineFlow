@@ -1,1 +1,1 @@
-Projeto de desenvolvimento de site com uso de Html, css, java
+Aplicação de catálogo de filmes desenvolvida para praticar e evoluir conhecimentos em Java, orientação a objetos e desenvolvimento web.
