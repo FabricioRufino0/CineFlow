@@ -6,10 +6,9 @@ public class Main {
 
     Scanner scanner = new Scanner(System.in);
 
-    Plano basic = new Plano();
-    Plano normal = new Plano();
-    Plano Premium = new Plano();
-    Plano tipoDePlano = null;
+    Usuario pessoa = new Usuario();
+
+    Plano plano = new Plano();
 
     Filme topGun = new Filme();
     Filme duna = new Filme();
@@ -18,11 +17,13 @@ public class Main {
     Filme oppenheimer = new Filme();
     Filme filmeSelecionado = null;
 
+    pessoa.nomeDoUsuario = "Fabricio";
+    plano.nomeDoPlano = "normal";
 
-    System.out.println("Digite o nome do plano: ");
-    tipoDePlano = scanner(tip9);
-    tipoDePlano.verificaTipoDePlano();
+    System.out.println("Bem vindo, " + pessoa.nomeDoUsuario +  "!!");
 
+    System.out.println("Plano atual: " + plano.nomeDoPlano);
+    System.out.println("-----------------------------------");
 
 
     topGun.nome = "Top Gun";
@@ -57,9 +58,9 @@ public class Main {
 
     String fecharSistema = "Sair do sistema";
 
-    int opcao = 0;
+    int opcaoDeFilme = 0;
 
-    while (opcao != 6) {
+    while (opcaoDeFilme != 6) {
 
       System.out.println("Este é o screenMatch");
       System.out.println("-----------------------------------");
@@ -71,14 +72,14 @@ public class Main {
               "5 - " + oppenheimer.nome + "\n" +
               "6 - " + fecharSistema);
 
-      opcao = scanner.nextInt();
+      opcaoDeFilme = scanner.nextInt();
 
-      if (opcao == 6) {
+      if (opcaoDeFilme == 6) {
         System.out.println("Saindo.....");
         break;
       }
 
-      switch (opcao) {
+      switch (opcaoDeFilme) {
 
         case 1:
           filmeSelecionado = topGun;
