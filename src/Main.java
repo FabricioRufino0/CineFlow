@@ -1,8 +1,12 @@
+import br.com.cineflow.modelos.Filme;
+import br.com.cineflow.modelos.Plano;
+import br.com.cineflow.modelos.Usuario;
+
 import java.util.Scanner;
 
 public class Main {
 
-  public static void main(String[] args) {
+  static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in);
 
@@ -17,42 +21,42 @@ public class Main {
     Filme oppenheimer = new Filme();
     Filme filmeSelecionado = null;
 
-    pessoa.nomeDoUsuario = "Fabricio";
-    plano.nomeDoPlano = "normal";
+    pessoa.setNomeDoUsuario("Fabricio");
+    plano.setNomeDoPlano("normal");
 
-    System.out.println("Bem vindo, " + pessoa.nomeDoUsuario +  "!!");
+    System.out.println("Bem vindo, " + pessoa.getNomeDoUsuario() +  "!!");
 
-    System.out.println("Plano atual: " + plano.nomeDoPlano);
+    System.out.println("br.com.cineflow.modelos.Plano atual: " + plano.getNomeDoPlano());
     System.out.println("-----------------------------------");
 
 
-    topGun.nome = "Top Gun";
-    topGun.descricao = "Ases Indomáveis, Pete Mitchell (Tom Cruise), um jovem piloto, ingressa na Academia Aérea para se tornar piloto de caça.";
-    topGun.anoDeLancamento = 2024;
+    topGun.setNome("Top Gun");
+    topGun.setDescricao("Ases Indomáveis, Pete Mitchell (Tom Cruise), um jovem piloto, ingressa na Academia Aérea para se tornar piloto de caça.");
+    topGun.setAnoDeLancamento(2024);
     topGun.nota1DoFilme = 9.2;
     topGun.nota2DoFilme = 8.9;
 
-    duna.nome= "Duna";
-    duna.descricao = "Duna é uma famosa obra de ficção científica criada por Frank Herbert que se passa no inóspito planeta desértico Arrakis.";
-    duna.anoDeLancamento = 2021;
+    duna.setNome("Duna");
+    duna.setDescricao("Duna é uma famosa obra de ficção científica criada por Frank Herbert que se passa no inóspito planeta desértico Arrakis.");
+    duna.setAnoDeLancamento(2021);
     duna.nota1DoFilme = 9.0;
     duna.nota2DoFilme = 8.0;
 
-    vingadores.nome = "Vingadores";
-    vingadores.descricao = "Os heróis mais poderosos da Terra precisam unir forças para impedir uma ameaça capaz de colocar todo o planeta em perigo.";
-    vingadores.anoDeLancamento = 2012;
+    vingadores.setNome("Vingadores");
+    vingadores.setDescricao("Os heróis mais poderosos da Terra precisam unir forças para impedir uma ameaça capaz de colocar todo o planeta em perigo.");
+    vingadores.setAnoDeLancamento(2012);
     vingadores.nota1DoFilme = 9.1;
     vingadores.nota2DoFilme = 7.7;
 
-    barbie.nome = "Barbie";
-    barbie.descricao = "Barbie deixa o mundo perfeito da Barbielândia e parte para o mundo real em busca de respostas sobre sua existência.";
-    barbie.anoDeLancamento = 2023;
+    barbie.setNome("Barbie");
+    barbie.setDescricao("Barbie deixa o mundo perfeito da Barbielândia e parte para o mundo real em busca de respostas sobre sua existência.");
+    barbie.setAnoDeLancamento(2023);
     barbie.nota1DoFilme = 9.7;
     barbie.nota2DoFilme = 5.8;
 
-    oppenheimer.nome = "Oppenheimer";
-    oppenheimer.descricao = "A história do físico J. Robert Oppenheimer e sua participação no desenvolvimento da primeira bomba atômica durante o Projeto Manhattan.";
-    oppenheimer.anoDeLancamento = 2023;
+    oppenheimer.setNome("Oppenheimer");
+    oppenheimer.setDescricao("A história do físico J. Robert Oppenheimer e sua participação no desenvolvimento da primeira bomba atômica durante o Projeto Manhattan.");
+    oppenheimer.setAnoDeLancamento(2023);
     oppenheimer.nota1DoFilme = 8.5;
     oppenheimer.nota2DoFilme = 7.4;
 
@@ -65,11 +69,11 @@ public class Main {
       System.out.println("Este é o screenMatch");
       System.out.println("-----------------------------------");
       System.out.println("Escolha um dos seguintes filmes: \n" +
-              "1 - " + topGun.nome + "\n" +
-              "2 - " + duna.nome + "\n" +
-              "3 - " + vingadores.nome + "\n" +
-              "4 - " + barbie.nome+ "\n" +
-              "5 - " + oppenheimer.nome + "\n" +
+              "1 - " + topGun.getNome() + "\n" +
+              "2 - " + duna.getNome() + "\n" +
+              "3 - " + vingadores.getNome() + "\n" +
+              "4 - " + barbie.getNome() + "\n" +
+              "5 - " + oppenheimer.getNome() + "\n" +
               "6 - " + fecharSistema);
 
       opcaoDeFilme = scanner.nextInt();
@@ -102,7 +106,7 @@ public class Main {
           break;
 
         default:
-          System.out.println("Filme inválido");
+          System.out.println("br.com.cineflow.modelos.Filme inválido");
           continue;
 
       }
