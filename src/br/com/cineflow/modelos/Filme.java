@@ -53,7 +53,7 @@ public class Filme {
 
     public void exibeFichaFilme() {
         System.out.println("\n-----------------------------------");
-        System.out.println("br.com.cineflow.modelos.Filme: " + nome+ "\nDescriçao do filme: " + descricao +
+        System.out.println("Filme: " + nome+ "\nDescriçao do filme: " + descricao +
                 "\nAno de lançamento: " + anoDeLancamento  + "\nNota do filme: " + notaGeralDoFilme + " É um filme: " + estrelasGeradas + estrelasApagadas + " Estrelas");
     }
 }

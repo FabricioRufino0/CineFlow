@@ -26,7 +26,7 @@ public class Main {
 
     System.out.println("Bem vindo, " + pessoa.getNomeDoUsuario() +  "!!");
 
-    System.out.println("br.com.cineflow.modelos.Plano atual: " + plano.getNomeDoPlano());
+    System.out.println("Plano atual: " + plano.getNomeDoPlano());
     System.out.println("-----------------------------------");
 
 
@@ -106,7 +106,7 @@ public class Main {
           break;
 
         default:
-          System.out.println("br.com.cineflow.modelos.Filme inválido");
+          System.out.println("Filme inválido");
           continue;
 
       }
