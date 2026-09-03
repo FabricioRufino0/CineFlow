@@ -53,6 +53,8 @@ public class Filme {
     public String calculaEstrelas(){
         estrelas = (int) calculaMediaFIlme() / 2;
         estrelasVazias = 5 - estrelas;
+        estrelasGeradas = "";
+        estrelasApagadas = ""; 
 
         for (int i = 0; i < estrelas; i++) {
             estrelasGeradas += "★";
@@ -63,7 +65,13 @@ public class Filme {
         return estrelasGeradas + estrelasApagadas;
     }
 
+    public void receberNota(double nota) {
+        calcularNota(nota);
+    }
 
+    public void exibeNotaRecebida() {
+        System.out.println("Nota dada para " + nome + ": " + calculaMediaFIlme());
+    }
 
     public void exibeFichaFilme() {
         System.out.println("\n-----------------------------------");
