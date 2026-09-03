@@ -1,18 +1,18 @@
 package br.com.cineflow.modelos;
 
+
 public class Filme {
 
     private String nome;
     private String descricao;
     private int anoDeLancamento;
-    public double nota1DoFilme;
-    public double nota2DoFilme;
 
-    private double notaGeralDoFilme;
-    private int estrelas ;
-    private String estrelasGeradas;
+    private double somaDasAvaliacoes;
+    private int totalAvaliacoes;
+    private int estrelas;
+    private String estrelasGeradas = "";
     private int estrelasVazias;
-    private String estrelasApagadas;
+    private String estrelasApagadas = "";
 
 
 
@@ -34,14 +34,25 @@ public class Filme {
 
 
 
-    public void calcularNota() {
+    public void calcularNota(double nota) {
 
-        estrelasApagadas = "";
-        estrelasGeradas = "";
-        notaGeralDoFilme = (nota1DoFilme + nota2DoFilme) / 2;
-        estrelas = (int) notaGeralDoFilme / 2;
+
+        somaDasAvaliacoes += nota;
+        totalAvaliacoes += 1;
+    }
+
+    public double calculaMediaFIlme() {
+        if (totalAvaliacoes == 0) {
+            return 0;
+        }
+
+        double media = somaDasAvaliacoes / totalAvaliacoes;
+        return media;
+    }
+
+    public String calculaEstrelas(){
+        estrelas = (int) calculaMediaFIlme() / 2;
         estrelasVazias = 5 - estrelas;
-
 
         for (int i = 0; i < estrelas; i++) {
             estrelasGeradas += "★";
@@ -49,11 +60,14 @@ public class Filme {
         for (int i = 0; i < estrelasVazias; i++) {
             estrelasApagadas += "☆";
         }
+        return estrelasGeradas + estrelasApagadas;
     }
+
+
 
     public void exibeFichaFilme() {
         System.out.println("\n-----------------------------------");
         System.out.println("Filme: " + nome+ "\nDescriçao do filme: " + descricao +
-                "\nAno de lançamento: " + anoDeLancamento  + "\nNota do filme: " + notaGeralDoFilme + " É um filme: " + estrelasGeradas + estrelasApagadas + " Estrelas");
+                "\nAno de lançamento: " + anoDeLancamento  + "\nNota do filme: " +  calculaMediaFIlme() + " É um filme: " + calculaEstrelas() + " Estrelas");
     }
 }

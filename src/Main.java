@@ -33,32 +33,26 @@ public class Main {
     topGun.setNome("Top Gun");
     topGun.setDescricao("Ases Indomáveis, Pete Mitchell (Tom Cruise), um jovem piloto, ingressa na Academia Aérea para se tornar piloto de caça.");
     topGun.setAnoDeLancamento(2024);
-    topGun.nota1DoFilme = 9.2;
-    topGun.nota2DoFilme = 8.9;
 
     duna.setNome("Duna");
     duna.setDescricao("Duna é uma famosa obra de ficção científica criada por Frank Herbert que se passa no inóspito planeta desértico Arrakis.");
     duna.setAnoDeLancamento(2021);
-    duna.nota1DoFilme = 9.0;
-    duna.nota2DoFilme = 8.0;
+
 
     vingadores.setNome("Vingadores");
     vingadores.setDescricao("Os heróis mais poderosos da Terra precisam unir forças para impedir uma ameaça capaz de colocar todo o planeta em perigo.");
     vingadores.setAnoDeLancamento(2012);
-    vingadores.nota1DoFilme = 9.1;
-    vingadores.nota2DoFilme = 7.7;
+
 
     barbie.setNome("Barbie");
     barbie.setDescricao("Barbie deixa o mundo perfeito da Barbielândia e parte para o mundo real em busca de respostas sobre sua existência.");
     barbie.setAnoDeLancamento(2023);
-    barbie.nota1DoFilme = 9.7;
-    barbie.nota2DoFilme = 5.8;
+
 
     oppenheimer.setNome("Oppenheimer");
     oppenheimer.setDescricao("A história do físico J. Robert Oppenheimer e sua participação no desenvolvimento da primeira bomba atômica durante o Projeto Manhattan.");
     oppenheimer.setAnoDeLancamento(2023);
-    oppenheimer.nota1DoFilme = 8.5;
-    oppenheimer.nota2DoFilme = 7.4;
+
 
     String fecharSistema = "Sair do sistema";
 
@@ -111,7 +105,7 @@ public class Main {
 
       }
 
-      filmeSelecionado.calcularNota();
+      filmeSelecionado.calcularNota(3);
       filmeSelecionado.exibeFichaFilme();
 
       System.out.println("-----------------------------------");
