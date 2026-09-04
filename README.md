@@ -1,48 +1,43 @@
 # CineFlow
 
-Projeto de estudos em evolução criado para praticar fundamentos de Java, Programação Orientada a Objetos e desenvolvimento web.
+Projeto de estudos desenvolvido para praticar Java, Programação Orientada a Objetos e organização de código por meio de um catálogo de filmes executado no terminal.
 
-> **Status:** em desenvolvimento. Esta versão representa meu nível atual de aprendizado e ainda não é uma aplicação final.
+> **Status:** em desenvolvimento. O projeto acompanha meu progresso nos estudos e ainda possui funcionalidades e decisões de código que serão aprimoradas.
 
-## Objetivo
+## Funcionalidades atuais
 
-Construir, de forma incremental, um catálogo de filmes com usuários e planos. Cada atualização acompanha os conceitos estudados e aplica esses conhecimentos em um projeto próprio.
-
-## O que funciona atualmente
-
-### Aplicação Java no terminal
-
-- Cadastro em memória de cinco filmes.
+- Catálogo com cinco filmes cadastrados em memória.
 - Menu interativo utilizando `Scanner`.
-- Seleção de filmes com `switch`.
-- Repetição do menu com `while`.
-- Exibição de nome, descrição e ano de lançamento.
-- Cálculo da média de duas notas.
-- Conversão da média para uma classificação visual de até cinco estrelas.
-- Opções para retornar ao menu ou encerrar o programa.
-- Classes separadas para `Filme`, `Usuario` e `Plano`.
-- Uso inicial de pacotes, atributos privados, getters e setters.
+- Seleção de filmes por meio de `switch`.
+- Exibição da ficha do filme com nome, descrição e ano de lançamento.
+- Registro de avaliações para cada filme.
+- Cálculo da média com base na soma e na quantidade de avaliações.
+- Conversão da média em uma classificação visual de até cinco estrelas.
+- Opções para retornar ao catálogo ou encerrar o programa.
+- Interface web inicial criada separadamente com HTML e CSS.
 
-### Interface web inicial
+## Progresso recente
 
-- Estrutura básica em HTML.
-- Estilização em CSS.
-- Logo, cabeçalho e menu de navegação.
-- Identidade visual inicial do CineFlow.
+O código foi reorganizado para aplicar melhor os conceitos de orientação a objetos:
 
-A interface web ainda é estática e não está integrada à aplicação Java.
+- Os dados dos filmes foram encapsulados na classe `Filme`.
+- Nome, descrição, ano, avaliações e classificação estão definidos como atributos privados.
+- A própria classe `Filme` controla o recebimento das notas, o cálculo da média e a geração das estrelas.
+- As classes `Usuario` e `Plano` também utilizam atributos privados com métodos de acesso.
+- Os modelos foram organizados no pacote `br.com.cineflow.modelos`.
+- O menu principal passou a utilizar os métodos das classes em vez de acessar diretamente seus atributos.
 
 ## Conceitos praticados
 
-- Variáveis e tipos de dados.
-- Condicionais `if` e `else`.
-- `switch`.
+- Classes e objetos.
+- Atributos e métodos.
+- Encapsulamento.
+- Getters e setters.
+- Pacotes Java.
+- Condicionais `if`, `else` e `switch`.
 - Laços de repetição.
 - Entrada de dados com `Scanner`.
-- Classes, objetos, atributos e métodos.
-- Pacotes Java.
-- Encapsulamento básico.
-- Getters e setters.
+- Acumulação de valores e cálculo de média.
 - Git e GitHub.
 - HTML e CSS.
 
@@ -65,34 +60,52 @@ CineFlow/
 
 ## Como executar
 
-### Pelo IntelliJ IDEA
+### IntelliJ IDEA
 
 1. Clone ou baixe o repositório.
 2. Abra a pasta do projeto no IntelliJ IDEA.
-3. Confirme que o JDK está configurado.
+3. Configure um JDK compatível.
 4. Execute o método `main` localizado em `src/Main.java`.
-5. Utilize o terminal da aplicação para escolher um filme.
+5. Utilize o terminal para navegar pelo catálogo e avaliar os filmes.
 
-## Limitações conhecidas
+### Terminal
 
-- Os filmes, o usuário e o plano ainda são definidos diretamente no código.
-- O plano é exibido, mas ainda não altera o acesso aos filmes.
-- O encapsulamento ainda está sendo aplicado gradualmente.
-- A entrada do usuário ainda não trata todos os valores inválidos.
-- Não existe banco de dados ou persistência.
-- O front-end ainda não possui funcionalidades e não se comunica com o Java.
-- Ainda não existem testes automatizados.
+Na pasta principal do projeto:
+
+```bash
+javac -d out src/Main.java src/br/com/cineflow/modelos/*.java
+java -cp out Main
+```
+
+## Interface web
+
+A pasta `frontend` contém a estrutura visual inicial do CineFlow, com HTML, CSS, imagens, cabeçalho e menu de navegação.
+
+Atualmente, essa interface é estática e ainda não está integrada à aplicação Java executada no terminal.
+
+## Limitações atuais
+
+- Os filmes, o usuário e o plano ainda são criados diretamente na classe `Main`.
+- Ao abrir uma ficha, uma nota fixa de teste ainda é adicionada ao filme.
+- As notas informadas pelo usuário ainda não são validadas completamente.
+- Entradas que não sejam números podem interromper a execução.
+- As classes `Usuario` e `Plano` ainda possuem uma estrutura inicial e não estão relacionadas entre si.
+- O tipo de plano ainda não altera o comportamento do sistema.
+- Parte das responsabilidades permanece concentrada na classe `Main`.
+- Os dados ficam apenas em memória.
+- Não existe banco de dados.
+- Não existem testes automatizados.
+- O front-end ainda não se comunica com o Java.
 
 ## Próximos passos
 
-- Finalizar o estudo e a aplicação de encapsulamento.
-- Evoluir o projeto com herança e polimorfismo quando esses conceitos forem estudados.
-- Utilizar Collections para organizar os filmes.
-- Melhorar a validação das entradas.
-- Fazer os tipos de plano influenciarem o comportamento do sistema.
-- Reduzir dados fixos e responsabilidades concentradas na classe `Main`.
-- Posteriormente estudar Spring Boot, APIs REST, PostgreSQL, JPA e testes automatizados.
+- Corrigir o fluxo de avaliações e remover a nota fixa utilizada nos testes.
+- Validar as opções do menu e as notas recebidas.
+- Melhorar a divisão de responsabilidades da classe `Main`.
+- Utilizar `Collections` para organizar o catálogo de filmes.
+- Evoluir a relação entre usuários e planos.
+- Aplicar tratamento de exceções.
+- Praticar herança e polimorfismo.
+- Criar testes automatizados.
 
-## Autor
-
-Desenvolvido por [Fabrício Rufino](https://github.com/FabricioRufino0) como projeto de aprendizado contínuo.
+Em uma etapa posterior, o projeto poderá evoluir para Spring Boot, API REST, JPA e PostgreSQL. Essas tecnologias fazem parte do planejamento e ainda não estão implementadas.
