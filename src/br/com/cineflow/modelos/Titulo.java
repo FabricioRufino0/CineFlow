@@ -10,7 +10,12 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int totalAvaliacoes;
 
-
+    public Titulo(String nome, String descricao, int anoDeLancamento, String genero) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.anoDeLancamento = anoDeLancamento;
+        this.genero = genero;
+    }
 
 
     public void setNome(String nome) {
