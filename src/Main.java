@@ -30,117 +30,19 @@ public class Main {
       System.out.println("-----------------------------------");
 
 
-      topGun.setNome("Top Gun");
-      topGun.setDescricao("Ases Indomáveis, Pete Mitchell (Tom Cruise), um jovem piloto, ingressa na Academia Aérea para se tornar piloto de caça.");
-      topGun.setAnoDeLancamento(2024);
+      System.out.println("O que gostaria de ver?");
+      System.out.println("1 - Filmes");
+      System.out.println("2 - Séries");
+      System.out.println("-----------------------------------");
 
-      duna.setNome("Duna");
-      duna.setDescricao("Duna é uma famosa obra de ficção científica criada por Frank Herbert que se passa no inóspito planeta desértico Arrakis.");
-      duna.setAnoDeLancamento(2021);
+      String opcaoDeTitulo = scanner.nextLine();
 
+      if (opcaoDeTitulo.equals("1")) {
 
-      vingadores.setNome("Vingadores");
-      vingadores.setDescricao("Os heróis mais poderosos da Terra precisam unir forças para impedir uma ameaça capaz de colocar todo o planeta em perigo.");
-      vingadores.setAnoDeLancamento(2012);
+      } else if (opcaoDeTitulo.equals("2")) {
+        opcaoDeTitulo = "Series";
+      }
 
-
-      barbie.setNome("Barbie");
-      barbie.setDescricao("Barbie deixa o mundo perfeito da Barbielândia e parte para o mundo real em busca de respostas sobre sua existência.");
-      barbie.setAnoDeLancamento(2023);
-
-
-      oppenheimer.setNome("Oppenheimer");
-      oppenheimer.setDescricao("A história do físico J. Robert Oppenheimer e sua participação no desenvolvimento da primeira bomba atômica durante o Projeto Manhattan.");
-      oppenheimer.setAnoDeLancamento(2023);
-
-
-      String fecharSistema = "Sair do sistema";
-
-      int opcaoDeFilme = 0;
-
-      while (opcaoDeFilme != 6) {
-
-            System.out.println("Este é o screenMatch");
-            System.out.println("-----------------------------------");
-            System.out.println("Escolha um dos seguintes filmes: \n" +
-              "1 - " + topGun.getNome() + "\n" +
-              "2 - " + duna.getNome() + "\n" +
-              "3 - " + vingadores.getNome() + "\n" +
-              "4 - " + barbie.getNome() + "\n" +
-              "5 - " + oppenheimer.getNome() + "\n" +
-              "6 - " + fecharSistema);
-
-        opcaoDeFilme = scanner.nextInt();
-
-            if (opcaoDeFilme == 6) {
-                System.out.println("Saindo.....");
-                break;
-            }
-
-        switch (opcaoDeFilme) {
-
-                case 1:
-                    filmeSelecionado = topGun;
-                    break;
-
-                case 2:
-                    filmeSelecionado = duna;
-                    break;
-
-                case 3:
-                    filmeSelecionado = vingadores;
-                    break;
-
-                case 4:
-                    filmeSelecionado = barbie;
-                    break;
-
-                case 5:
-                    filmeSelecionado = oppenheimer;
-                    break;
-
-                default:
-                    System.out.println("Filme inválido");
-                    continue;
-
-        }
-
-
-        System.out.println("-----------------------------------");
-        System.out.println("Você selecionou o filme: " + filmeSelecionado.getNome());
-        System.out.println("1 - Abrir ficha do filme");
-        System.out.println("2 - Avaliar o filme");
-        System.out.println("3 - Voltar ao menu");
-        System.out.println("-----------------------------------");
-
-        int escolhaDeMenu = 0;
-
-        escolhaDeMenu = scanner.nextInt();
-
-            switch (escolhaDeMenu) {
-                case 1:
-                    filmeSelecionado.calcularNota(8.5);
-                    filmeSelecionado.exibeFichaFilme();
-                    break;
-
-                case 2:
-                    System.out.println("Digite a nota que deseja dar para o filme: ");
-                    double nota = scanner.nextDouble();
-                    filmeSelecionado.receberNota(nota);
-                    filmeSelecionado.exibeNotaRecebida();
-                    break;
-
-                case 3:
-                    continue;
-
-                default:
-                    System.out.println("Opção inválida");
-                    break;
-            }
-
-            ;
-
-            System.out.println("-----------------------------------");
             System.out.println("-----------------------------------");
             System.out.println("1 -Voltar ao menu?");
             System.out.println("2 -Fechar o sistema?");
@@ -155,7 +57,7 @@ public class Main {
             } else {
                 System.out.println("Opçao invalida");
             }
-        }
+
 
         scanner.close();
     }
