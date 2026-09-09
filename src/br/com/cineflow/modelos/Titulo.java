@@ -10,6 +10,18 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int totalAvaliacoes;
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
     public Titulo(String nome, String descricao, int anoDeLancamento, String genero) {
         this.nome = nome;
         this.descricao = descricao;
@@ -36,9 +48,7 @@ public class Titulo {
 
 
 
-    public void calcularNota(double nota) {
-
-
+    public void calcularNota(Double nota) {
         somaDasAvaliacoes += nota;
         totalAvaliacoes += 1;
     }

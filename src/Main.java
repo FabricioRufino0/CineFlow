@@ -6,50 +6,17 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-
-      Scanner scanner = new Scanner(System.in);
-
-      Usuario pessoa = new Usuario();
-
-      Plano plano = new Plano();
-
-      Filme topGun = new Filme();
-      Filme duna = new Filme();
-      Filme vingadores = new Filme();
-      Filme barbie = new Filme();
-      Filme oppenheimer = new Filme();
-      Filme filmeSelecionado = null;
-
-      pessoa.setNomeDoUsuario("Fabricio");
-      plano.setNomeDoPlano("normal");
-
-      System.out.println("Bem vindo, " + pessoa.getNomeDoUsuario() + "!!");
-
-      System.out.println("Plano atual: " + plano.getNomeDoPlano());
-      System.out.println("-----------------------------------");
-
-
-      System.out.println("O que gostaria de ver?");
-      System.out.println("1 - Filmes");
-      System.out.println("2 - Séries");
-      System.out.println("-----------------------------------");
-
-      String opcaoDeTitulo = scanner.nextLine();
-
-      if (opcaoDeTitulo.equals("1")) {
-
-      } else if (opcaoDeTitulo.equals("2")) {
-        opcaoDeTitulo = "Series";
-      } 
-
-      public void exibeFilmes() {
-
-
-        String fecharSistema = "Sair do sistema";
-
+    public static void exibeFilmes(
+            Scanner scanner,
+            Filme topGun,
+            Filme duna,
+            Filme vingadores,
+            Filme barbie,
+            Filme oppenheimer
+    ) {
+        Filme filmeSelecionado = null;
         int opcaoDeFilme = 0;
-
+        String fecharSistema = "Sair do sistema";
         while (opcaoDeFilme != 6) {
 
             System.out.println("Este é o screenMatch");
@@ -63,7 +30,6 @@ public class Main {
                     "6 - " + fecharSistema);
 
             opcaoDeFilme = scanner.nextInt();
-
             if (opcaoDeFilme == 6) {
                 System.out.println("Saindo.....");
                 break;
@@ -94,10 +60,7 @@ public class Main {
                 default:
                     System.out.println("Filme inválido");
                     continue;
-
             }
-
-
             System.out.println("-----------------------------------");
             System.out.println("Você selecionou o filme: " + filmeSelecionado.getNome());
             System.out.println("1 - Abrir ficha do filme");
@@ -111,13 +74,13 @@ public class Main {
 
             switch (escolhaDeMenu) {
                 case 1:
-                    filmeSelecionado.calcularNota(8.5);
                     filmeSelecionado.exibeFicha();
                     break;
 
                 case 2:
                     System.out.println("Digite a nota que deseja dar para o filme: ");
                     double nota = scanner.nextDouble();
+
                     filmeSelecionado.receberNota(nota);
                     filmeSelecionado.exibeNotaRecebida();
                     break;
@@ -130,24 +93,95 @@ public class Main {
                     break;
             }
         }
+
+
     }
 
-            System.out.println("-----------------------------------");
-            System.out.println("1 -Voltar ao menu?");
-            System.out.println("2 -Fechar o sistema?");
+    public static void main(String[] args) {
 
-            int opcoesDepoisDoFilme = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-            if (opcoesDepoisDoFilme == 1) {
-                continue;
-            } else if (opcoesDepoisDoFilme == 2) {
-                System.out.println("Volte Sempre!!");
-                break;
-            } else {
-                System.out.println("Opçao invalida");
-            }
+        Usuario pessoa = new Usuario();
+
+        Plano plano = new Plano();
+
+        Filme topGun = new Filme(
+                "Top Gun",
+                "Tony Scott",
+                "Ação",
+                "Pete Mitchell, um jovem piloto, ingressa na academia aérea para se tornar piloto de caça.",
+                1986,
+                110
+        );
+
+        Filme duna = new Filme(
+                "Duna",
+                "Denis Villeneuve",
+                "Ficção científica",
+                "Paul Atreides viaja para Arrakis, planeta desértico essencial para o futuro de sua família e do império.",
+                2021,
+                155
+        );
+
+        Filme vingadores = new Filme(
+                "Os Vingadores",
+                "Joss Whedon",
+                "Ação",
+                "Um grupo de heróis precisa unir forças para impedir uma ameaça capaz de colocar a Terra em perigo.",
+                2012,
+                143
+        );
+
+        Filme barbie = new Filme(
+                "Barbie",
+                "Greta Gerwig",
+                "Comédia",
+                "Barbie deixa a Barbielândia e parte para o mundo real em busca de respostas sobre sua existência.",
+                2023,
+                114
+        );
+
+        Filme oppenheimer = new Filme(
+                "Oppenheimer",
+                "Christopher Nolan",
+                "Drama",
+                "A história do físico J. Robert Oppenheimer e sua participação no desenvolvimento da primeira bomba atômica.",
+                2023,
+                180
+        );
+
+        pessoa.setNomeDoUsuario("Fabricio");
+        plano.setNomeDoPlano("normal");
+
+        System.out.println("Bem vindo, " + pessoa.getNomeDoUsuario() + "!!");
+
+        System.out.println("Plano atual: " + plano.getNomeDoPlano());
+        System.out.println("-----------------------------------");
+
+
+        System.out.println("O que gostaria de ver?");
+        System.out.println("1 - Filmes");
+        System.out.println("2 - Séries");
+        System.out.println("-----------------------------------");
+
+        String opcaoDeTitulo = scanner.nextLine();
+
+        if (opcaoDeTitulo.equals("1")) {
+            exibeFilmes(
+                    scanner,
+                    topGun,
+                    duna,
+                    vingadores,
+                    barbie,
+                    oppenheimer
+            );
+        } else if (opcaoDeTitulo.equals("2")) {
+            opcaoDeTitulo = "Series";
+        }
 
 
         scanner.close();
     }
-    }
+}
+
+

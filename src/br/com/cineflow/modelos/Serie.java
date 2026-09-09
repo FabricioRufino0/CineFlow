@@ -22,12 +22,12 @@ public class Serie extends Titulo {
     }
 
     public Serie(String nome, String genero, String descricao,
-             int anoDeLancamento, int temporadas,
-             int episodiosTotais) {
+                 int anoDeLancamento, int temporadas,
+                 int episodiosTotais) {
 
-    super(nome, descricao, anoDeLancamento, genero);
+        super(nome, descricao, anoDeLancamento, genero);
 
-    this.temporadas = temporadas;
-    this.episodiosTotais = episodiosTotais;
- }
+        this.temporadas = temporadas;
+        this.episodiosTotais = episodiosTotais;
+    }
 }
