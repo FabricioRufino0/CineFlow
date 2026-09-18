@@ -1,101 +1,9 @@
-import br.com.cineflow.modelos.Filme;
-import br.com.cineflow.modelos.Plano;
-import br.com.cineflow.modelos.Usuario;
+import br.com.cineflow.modelos.*;
 
 import java.util.Scanner;
 
 public class Main {
 
-    public static void exibeFilmes(
-            Scanner scanner,
-            Filme topGun,
-            Filme duna,
-            Filme vingadores,
-            Filme barbie,
-            Filme oppenheimer
-    ) {
-        Filme filmeSelecionado = null;
-        int opcaoDeFilme = 0;
-        String fecharSistema = "Sair do sistema";
-        while (opcaoDeFilme != 6) {
-
-            System.out.println("Este é o screenMatch");
-            System.out.println("-----------------------------------");
-            System.out.println("Escolha um dos seguintes filmes: \n" +
-                    "1 - " + topGun.getNome() + "\n" +
-                    "2 - " + duna.getNome() + "\n" +
-                    "3 - " + vingadores.getNome() + "\n" +
-                    "4 - " + barbie.getNome() + "\n" +
-                    "5 - " + oppenheimer.getNome() + "\n" +
-                    "6 - " + fecharSistema);
-
-            opcaoDeFilme = scanner.nextInt();
-            if (opcaoDeFilme == 6) {
-                System.out.println("Saindo.....");
-                break;
-            }
-
-            switch (opcaoDeFilme) {
-
-                case 1:
-                    filmeSelecionado = topGun;
-                    break;
-
-                case 2:
-                    filmeSelecionado = duna;
-                    break;
-
-                case 3:
-                    filmeSelecionado = vingadores;
-                    break;
-
-                case 4:
-                    filmeSelecionado = barbie;
-                    break;
-
-                case 5:
-                    filmeSelecionado = oppenheimer;
-                    break;
-
-                default:
-                    System.out.println("Filme inválido");
-                    continue;
-            }
-            System.out.println("-----------------------------------");
-            System.out.println("Você selecionou o filme: " + filmeSelecionado.getNome());
-            System.out.println("1 - Abrir ficha do filme");
-            System.out.println("2 - Avaliar o filme");
-            System.out.println("3 - Voltar ao menu");
-            System.out.println("-----------------------------------");
-
-            int escolhaDeMenu = 0;
-
-            escolhaDeMenu = scanner.nextInt();
-
-            switch (escolhaDeMenu) {
-                case 1:
-                    filmeSelecionado.exibeFicha();
-                    break;
-
-                case 2:
-                    System.out.println("Digite a nota que deseja dar para o filme: ");
-                    double nota = scanner.nextDouble();
-
-                    filmeSelecionado.receberNota(nota);
-                    filmeSelecionado.exibeNotaRecebida();
-                    break;
-
-                case 3:
-                    continue;
-
-                default:
-                    System.out.println("Opção inválida");
-                    break;
-            }
-        }
-
-
-    }
 
     public static void main(String[] args) {
 
@@ -150,9 +58,56 @@ public class Main {
                 180
         );
 
+        Serie gameOfThrones = new Serie(
+                "Game of Thrones",
+                "Fantasia",
+                "Famílias nobres disputam o controle do Trono de Ferro enquanto uma ameaça cresce no norte.",
+                2011,
+                8,
+                73
+        );
+
+        Serie theOffice = new Serie(
+                "The Office",
+                "Comédia",
+                "Funcionários de uma empresa de papel têm seu cotidiano acompanhado por uma equipe de documentário.",
+                2005,
+                9,
+                201
+        );
+
+        Serie simpsons = new Serie(
+                "The Simpsons",
+                "Animação e comédia",
+                "A família Simpson vive situações cotidianas e satiriza diversos aspectos da sociedade americana.",
+                1989,
+                37,
+                800
+        );
+
+        Serie vikings = new Serie(
+                "Vikings",
+                "Drama histórico",
+                "Ragnar Lothbrok e outros guerreiros nórdicos exploram novas terras e enfrentam disputas por poder.",
+                2013,
+                6,
+                89
+        );
+
+        Serie suits = new Serie(
+                "Suits",
+                "Drama jurídico",
+                "Mike Ross começa a trabalhar em um grande escritório de advocacia ao lado de Harvey Specter apesar de esconder um segredo.",
+                2011,
+                9,
+                134
+        );
+
         pessoa.setNomeDoUsuario("Fabricio");
         plano.setNomeDoPlano("normal");
 
+        System.out.println("Este é o CineFLow");
+        System.out.println("-----------------------------------");
         System.out.println("Bem vindo, " + pessoa.getNomeDoUsuario() + "!!");
 
         System.out.println("Plano atual: " + plano.getNomeDoPlano());
@@ -167,7 +122,7 @@ public class Main {
         String opcaoDeTitulo = scanner.nextLine();
 
         if (opcaoDeTitulo.equals("1")) {
-            exibeFilmes(
+            Menu.exibeFilmes(
                     scanner,
                     topGun,
                     duna,
@@ -176,9 +131,15 @@ public class Main {
                     oppenheimer
             );
         } else if (opcaoDeTitulo.equals("2")) {
-            opcaoDeTitulo = "Series";
+            Menu.exibeSeries(
+                    scanner,
+                    gameOfThrones,
+                    theOffice,
+                    simpsons,
+                    vikings,
+                    suits
+            );
         }
-
 
         scanner.close();
     }

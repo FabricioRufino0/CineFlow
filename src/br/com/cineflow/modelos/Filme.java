@@ -29,14 +29,6 @@ public class Filme extends Titulo {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    public void exibeFicha() {
-        System.out.println("Nome do filme: " + getNome());
-        System.out.println("Descrição: " + getDescricao());
-        System.out.println("Ano de lançamento: " + getAnoDeLancamento());
-        System.out.println("Gênero: " + getGenero());
-        System.out.println("Duração em minutos: " + getDuracaoEmMinutos());
-        System.out.println("Diretor: " + getDiretor());
-    }
 }
 
 

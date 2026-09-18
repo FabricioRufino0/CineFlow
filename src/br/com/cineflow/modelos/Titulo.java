@@ -48,7 +48,7 @@ public class Titulo {
 
 
 
-    public void calcularNota(Double nota) {
+    public void calcularNota(double nota) {
         somaDasAvaliacoes += nota;
         totalAvaliacoes += 1;
     }
@@ -85,7 +85,7 @@ public class Titulo {
         System.out.println("Nota dada para " + nome + ": " + calculaMediaFilme());
     }
 
-    public void exibeFicha() {
+    public void exibeFichaDoFilme() {
         System.out.println("\n-----------------------------------");
         System.out.println("Filme: " + nome+ "\nDescriçao do filme: " + descricao +
                 "\nAno de lançamento: " + anoDeLancamento  + "\nNota do filme: " +  calculaMediaFilme() + " É um filme: " + calculaEstrelas() + " Estrelas");
