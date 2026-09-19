@@ -13,6 +13,8 @@ public class Main {
 
         Plano plano = new Plano();
 
+        //Criaçao dos objetos filmes
+
         Filme topGun = new Filme(
                 "Top Gun",
                 "Tony Scott",
@@ -58,13 +60,16 @@ public class Main {
                 180
         );
 
+        //Criaçao dos objetos Series
+
         Serie gameOfThrones = new Serie(
                 "Game of Thrones",
                 "Fantasia",
                 "Famílias nobres disputam o controle do Trono de Ferro enquanto uma ameaça cresce no norte.",
                 2011,
                 8,
-                73
+                10,
+                60
         );
 
         Serie theOffice = new Serie(
@@ -73,7 +78,8 @@ public class Main {
                 "Funcionários de uma empresa de papel têm seu cotidiano acompanhado por uma equipe de documentário.",
                 2005,
                 9,
-                201
+                201,
+                30
         );
 
         Serie simpsons = new Serie(
@@ -82,7 +88,8 @@ public class Main {
                 "A família Simpson vive situações cotidianas e satiriza diversos aspectos da sociedade americana.",
                 1989,
                 37,
-                800
+                20,
+                22
         );
 
         Serie vikings = new Serie(
@@ -91,7 +98,8 @@ public class Main {
                 "Ragnar Lothbrok e outros guerreiros nórdicos exploram novas terras e enfrentam disputas por poder.",
                 2013,
                 6,
-                89
+                89,
+                50
         );
 
         Serie suits = new Serie(
@@ -100,7 +108,8 @@ public class Main {
                 "Mike Ross começa a trabalhar em um grande escritório de advocacia ao lado de Harvey Specter apesar de esconder um segredo.",
                 2011,
                 9,
-                134
+                134,
+                45
         );
 
         pessoa.setNomeDoUsuario("Fabricio");

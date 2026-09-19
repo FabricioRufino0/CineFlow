@@ -4,18 +4,17 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void exibeFichaDoFilme(Filme filme) {
+    public static void exibeFicha(Filme filme) {
         System.out.println("\n-----------------------------------");
         System.out.println("Filme: " + filme.getNome() + "\nDescriçao do filme: " + filme.getDescricao() +
                 "\nAno de lançamento: " + filme.getAnoDeLancamento()  + "\nNota do filme: " + filme.calculaMediaFilme() + " É um filme: " + filme.calculaEstrelas() + " Estrelas");
 
     }
 
-    public static void exibeFichaDaSerie(Serie serie) {
+    public static void exibeFicha(Serie serie) {
         System.out.println("\n-----------------------------------");
         System.out.println("Série: " + serie.getNome() + " Temporadas: " + serie.getTemporadas() + " Episodios: " + serie.getEpisodiosTotais() + "\nDescriçao da série: " + serie.getDescricao() +
                 "\nAno de lançamento: " + serie.getAnoDeLancamento()  + "\nNota da série: " +  serie.calculaMediaFilme() + " É uma série " + serie.calculaEstrelas() + " Estrelas");
-
     }
 
     public static void exibeFilmes(
@@ -86,11 +85,11 @@ public class Menu {
 
             switch (escolhaDeMenu) {
                 case 1:
-                    exibeFichaDoFilme(filmeSelecionado);
+                    exibeFicha(filmeSelecionado);
                     int escolhaDentroDoMenu;
                     System.out.println("-----------------------------------");
                     System.out.println("O que fazer a seguir?");
-                    System.out.println("1 - voltar ao menu de filmes");
+                    System.out.println("1 - Voltar ao menu de filmes");
                     System.out.println("2 - Fechar CineFlow");
                     escolhaDentroDoMenu = scanner.nextInt();
                     if (escolhaDentroDoMenu == 1) {
@@ -184,7 +183,7 @@ public class Menu {
 
                 switch (escolhaDeMenu) {
                     case 1:
-                        exibeFichaDaSerie(serieSelecionada);
+                        exibeFicha(serieSelecionada);
                         int escolhaDentroDoMenu;
                         System.out.println("-----------------------------------");
                         System.out.println("O que fazer a seguir?");

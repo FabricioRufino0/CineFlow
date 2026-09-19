@@ -22,8 +22,7 @@ public class Filme extends Titulo {
         return duracaoEmMinutos;
     }
 
-    public Filme(String nome, String diretor, String genero, String descricao,
-                 int anoDeLancamento, int duracaoEmMinutos) {
+    public Filme(String nome, String diretor, String genero, String descricao, int anoDeLancamento, int duracaoEmMinutos) {
         super(nome, descricao, anoDeLancamento, genero);
         this.diretor = diretor;
         this.duracaoEmMinutos = duracaoEmMinutos;
